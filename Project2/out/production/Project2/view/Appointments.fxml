@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="479.0" prefWidth="951.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AppointmentsController">
+   <children>
+      <AnchorPane layoutX="8.0" layoutY="9.0" prefHeight="461.0" prefWidth="934.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+         <children>
+            <Label layoutX="28.0" layoutY="14.0" text="Appointments">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TableView fx:id="appointmentsTable" layoutX="6.0" layoutY="51.0" onMouseClicked="#onTableClick" prefHeight="187.0" prefWidth="921.0">
+               <columns>
+                  <TableColumn fx:id="appointmentIdCol" prefWidth="97.5" text="Appointment ID" />
+                  <TableColumn fx:id="titleCol" prefWidth="87.0" text="Title" />
+                  <TableColumn fx:id="descriptionCol" prefWidth="126.0" text="Description" />
+                  <TableColumn fx:id="locationCol" minWidth="0.0" prefWidth="88.0" text="Location" />
+                  <TableColumn fx:id="contactCol" prefWidth="75.0" text="Contact" />
+                  <TableColumn fx:id="typeCol" prefWidth="75.0" text="Type" />
+                  <TableColumn fx:id="startCol" prefWidth="103.5" text="Start Date Time" />
+                  <TableColumn fx:id="endCol" prefWidth="102.5" text="End Date Time" />
+                  <TableColumn fx:id="customerIdCol" minWidth="8.0" prefWidth="95.5" text="Customer ID" />
+                  <TableColumn fx:id="userIdCol" prefWidth="70.0" text="User ID" />
+               </columns>
+            </TableView>
+            <Button layoutX="868.0" layoutY="242.0" mnemonicParsing="false" onAction="#onDeleteBtn" text="Delete" />
+            <Button layoutX="623.0" layoutY="426.0" mnemonicParsing="false" onAction="#onSaveBtn" prefHeight="25.0" prefWidth="60.0" text="Save" />
+            <HBox layoutX="21.0" layoutY="267.0" prefHeight="145.0" prefWidth="215.0">
+               <children>
+                  <VBox prefHeight="209.0" prefWidth="89.0" spacing="20.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="95.0" text="Appointment ID" />
+                        <Label text="Title" />
+                        <Label text="Description" />
+                        <Label text="Location" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="209.0" prefWidth="124.0" spacing="11.5">
+                     <children>
+                        <TextField editable="false" prefHeight="25.0" prefWidth="177.0" promptText="ID - Auto Generated" />
+                        <TextField fx:id="titleTxt" />
+                        <TextField fx:id="descriptionTxt" />
+                        <TextField fx:id="locationTxt" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox layoutX="257.0" layoutY="267.0" prefHeight="145.0" prefWidth="204.0">
+               <children>
+                  <VBox prefHeight="261.0" prefWidth="74.0" spacing="20.0">
+                     <children>
+                        <Label text="Contact" />
+                        <Label text="Type" />
+                        <Label layoutX="10.0" layoutY="339.0" text="Start Date" />
+                        <Label layoutX="10.0" layoutY="386.0" text="Start Time" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="261.0" prefWidth="128.0" spacing="11.5">
+                     <children>
+                        <ComboBox fx:id="contactCB" prefWidth="150.0" />
+                        <ComboBox fx:id="typeCB" prefWidth="150.0" />
+                        <DatePicker fx:id="datePicker" editable="false" showWeekNumbers="true" />
+                        <ComboBox fx:id="startTimeCB" prefHeight="25.0" prefWidth="130.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <RadioButton layoutX="461.0" layoutY="21.0" mnemonicParsing="false" onAction="#onWeekRadioBtn" text="Week">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tg" />
+               </toggleGroup></RadioButton>
+            <Button layoutX="796.0" layoutY="355.0" mnemonicParsing="false" onAction="#onBackToCustomersBtn" text="Manage Customers" />
+            <RadioButton layoutX="396.0" layoutY="21.0" mnemonicParsing="false" onAction="#onAllRadioBtn" selected="true" text="All" toggleGroup="$tg" />
+            <RadioButton layoutX="538.0" layoutY="21.0" mnemonicParsing="false" onAction="#onMonthRadioBtn" text="Month" toggleGroup="$tg" />
+            <Button layoutX="881.0" layoutY="426.0" mnemonicParsing="false" onMouseClicked="#onExitButton" text="Exit" />
+            <Button layoutX="830.0" layoutY="391.0" mnemonicParsing="false" onAction="#onViewReports" text="View Reports" />
+            <Button layoutX="501.0" layoutY="426.0" mnemonicParsing="false" onAction="#onClearFields" prefHeight="25.0" prefWidth="109.0" text="Clear Text Fields" />
+            <HBox layoutX="493.0" layoutY="267.0" prefHeight="74.0" prefWidth="204.0">
+               <children>
+                  <VBox prefHeight="261.0" prefWidth="74.0" spacing="20.0">
+                     <children>
+                        <Label text="End Time" />
+                        <Label layoutX="10.0" layoutY="433.0" text="Customer" />
+                        <Label layoutX="10.0" layoutY="480.0" text="User" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="261.0" prefWidth="128.0" spacing="11.5">
+                     <children>
+                        <ComboBox fx:id="endTimeCB" prefHeight="25.0" prefWidth="136.0" />
+                        <ComboBox fx:id="customerIdCB" prefWidth="150.0" />
+                        <ComboBox fx:id="userIdCB" prefWidth="150.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

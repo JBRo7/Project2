@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="524.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="9.0" prefHeight="502.0" prefWidth="669.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+         <children>
+            <Label layoutX="43.0" layoutY="8.0" text="Customer Information">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TableView fx:id="customerTable" layoutX="14.0" layoutY="38.0" onMouseClicked="#onTableClick" prefHeight="257.0" prefWidth="636.0">
+               <columns>
+                  <TableColumn fx:id="customerIDCol" prefWidth="82.0" text="Customer ID" />
+                  <TableColumn fx:id="customerNameCol" prefWidth="116.0" text="Name" />
+                  <TableColumn fx:id="addressCol" prefWidth="113.0" text="Address" />
+                  <TableColumn fx:id="zipCol" minWidth="0.0" prefWidth="88.0" text="Postal code" />
+                  <TableColumn fx:id="phoneCol" prefWidth="102.5" text="Phone Number" />
+                  <TableColumn fx:id="firstLvlDivisionCol" prefWidth="133.5" text="State/Provinces" />
+               </columns>
+            </TableView>
+            <Button layoutX="597.0" layoutY="306.0" mnemonicParsing="false" onAction="#onDeleteBtn" text="Delete" />
+            <Button layoutX="405.0" layoutY="467.0" mnemonicParsing="false" onAction="#onSaveBtn" prefHeight="25.0" prefWidth="67.0" text="Save" />
+            <Button layoutX="560.0" layoutY="375.0" mnemonicParsing="false" onAction="#onAppointmentsBtn" text="Appointments" />
+            <HBox layoutX="14.0" layoutY="315.0" prefHeight="144.0" prefWidth="219.0">
+               <children>
+                  <VBox prefHeight="257.0" prefWidth="123.0" spacing="20.0">
+                     <children>
+                        <Label text="Customer ID" />
+                        <Label text="Customer Name" />
+                        <Label text="Address" />
+                        <Label text="Postal code" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="257.0" prefWidth="135.0" spacing="11.5">
+                     <children>
+                        <TextField fx:id="customerIdTxt" editable="false" promptText="ID - Auto Generated" />
+                        <TextField fx:id="customerNameTxt" />
+                        <TextField fx:id="addressTxt" />
+                        <TextField fx:id="zipTxt" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button layoutX="615.0" layoutY="454.0" mnemonicParsing="false" onMouseClicked="#onExitBtn" text="Exit" />
+            <HBox layoutX="253.0" layoutY="315.0" prefHeight="101.0" prefWidth="219.0">
+               <children>
+                  <VBox prefHeight="257.0" prefWidth="123.0" spacing="20.0">
+                     <children>
+                        <Label text="Country" />
+                        <Label text="State/Providence" />
+                        <Label text="Phone Number" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="257.0" prefWidth="135.0" spacing="11.5">
+                     <children>
+                        <ComboBox fx:id="countryCB" onAction="#onCountryCB" prefWidth="150.0" />
+                        <ComboBox fx:id="firstLvlDivisionCB" prefWidth="150.0" />
+                        <TextField fx:id="phoneTxt" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button layoutX="560.0" layoutY="410.0" mnemonicParsing="false" onAction="#onReportsBtn" prefHeight="25.0" prefWidth="92.0" text="View Reports" />
+            <Button layoutX="284.0" layoutY="467.0" mnemonicParsing="false" onAction="#onClearFields" text="Clear Text Fields" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

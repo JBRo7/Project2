@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="359.0" prefWidth="409.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserIDController">
+   <children>
+      <Label layoutX="80.0" layoutY="47.0" text="Account Login">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+      </Label>
+      <Button layoutX="122.0" layoutY="252.0" mnemonicParsing="false" onAction="#onLoginBtn" prefHeight="29.0" prefWidth="77.0" style="-fx-background-color: #00BFFF;" text="Login">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <TextField fx:id="username" layoutX="125.0" layoutY="146.0" promptText="Username">
+         <font>
+            <Font size="13.0" />
+         </font></TextField>
+      <PasswordField fx:id="password" layoutX="125.0" layoutY="190.0" promptText="Password">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </PasswordField>
+      <Label fx:id="loginErrorMsg" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="69.0" layoutY="291.0" prefHeight="54.0" prefWidth="274.0" />
+      <Button layoutX="213.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#onExitBtn" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #00BFFF;" text="Exit">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="zoneIdLabel" layoutX="148.0" layoutY="111.0" text="Displays Time Zone" />
+   </children>
+</AnchorPane>
